@@ -22,11 +22,11 @@ def load_data(train_path, noisy_path):
     broken_images_paths = []   # Liste mit den beschädigten Versionen der 10 Bilder
 
     for filename in os.listdir(train_path):
-        img_path = os.path.join(train_path, filename)
+        img_path = os.path.join(train_path, filename).replace("\\","/")
         valid_images_paths.append(img_path)
 
     for filename in os.listdir(noisy_path):
-        img_path = os.path.join(noisy_path, filename)
+        img_path = os.path.join(noisy_path, filename).replace("\\","/")
         broken_images_paths.append(img_path)
 
     valid_images = []
